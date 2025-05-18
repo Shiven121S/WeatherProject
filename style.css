@@ -1,0 +1,218 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    background: linear-gradient(160deg, #fdd835 0%, #e53935 100%); /* Example Gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+    position: relative; /* For positioning the glassy gradient */
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 85%;
+    max-width: 400px;
+    max-height: 95vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#glassy-gradient {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    opacity: 0.6;
+    z-index: 10; /* Ensure it's above other content */
+    pointer-events: none; /* Don't interfere with clicks */
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)); /* Initial gradient */
+    animation: subtle-flow 5s infinite alternate; /* Apply animation */
+    background-size: 200% 200%; /* For smoother animation */
+}
+
+@keyframes subtle-flow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+#location-menu {
+    position: absolute;
+    top: 60px; /* Adjust as needed to be below the header */
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 15px;
+    z-index: 20;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+#location-menu h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#location-input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#location-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#update-location-button,
+#close-menu-button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#close-menu-button {
+    margin-right: 0;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 11;
+}
+
+#time, #location {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+#menu-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.current-weather-section {
+    text-align: left;
+    padding: 20px 0;
+    position: relative;
+    z-index: 11;
+}
+
+#temperature {
+    font-size: 3em;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#description {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.high-low {
+    font-size: 0.9em;
+    color: #eee;
+}
+
+.high-low span {
+    margin-right: 10px;
+}
+
+.divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 15px 0;
+    position: relative;
+    z-index: 11;
+}
+
+.hourly-forecast-section h3,
+.details-section h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+    position: relative;
+    z-index: 11;
+}
+
+.hourly-forecast {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 11;
+}
+
+.hourly-item {
+    flex: 0 0 auto;
+    width: 70px;
+    text-align: center;
+    padding: 5px;
+}
+
+.hourly-item img {
+    width: 30px;
+    height: 30px;
+    margin: 5px 0;
+}
+
+.hourly-item p {
+    margin: 2px 0;
+    font-size: 0.9em;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 10px;
+    position: relative;
+    z-index: 11;
+}
+
+.detail-item {
+    text-align: left;
+}
+
+.detail-label {
+    font-size: 0.85em;
+    color: #eee;
+    margin-bottom: 3px;
+}
+
+#feels-like,
+#humidity,
+#wind,
+#pressure {
+    font-size: 1em;
+    font-weight: bold;
+}
