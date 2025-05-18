@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="glassy-gradient"></div>
+        <div class="header">
+            <div class="time-location">
+                <p id="time">Loading...</p>
+                <p id="location">Loading...</p>
+            </div>
+            <button id="menu-button">&#9776;</button>
+        </div>
+
+        <div id="location-menu" class="hidden">
+            <h3>Change Location</h3>
+            <input type="text" id="location-input" placeholder="Enter city">
+            <button id="update-location-button">Update Location</button>
+            <button id="close-menu-button">Close</button>
+        </div>
+
+        <div class="current-weather-section">
+            <p id="temperature">--°C</p>
+            <p id="description">--</p>
+            <div class="high-low">
+                <span>H: <span class="max-temp">--°C</span></span>
+                <span>L: <span class="min-temp">--°C</span></span>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="hourly-forecast-section">
+            <h3>Hourly Forecast</h3>
+            <div class="hourly-forecast" id="hourly-forecast">
+                </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="details-section">
+            <h3>Details</h3>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <p class="detail-label">Feels like</p>
+                    <p id="feels-like">--°C</p>
+                </div>
+                <div class="detail-item">
+                    <p class="detail-label">Humidity</p>
+                    <p id="humidity">--%</p>
+                </div>
+                <div class="detail-item">
+                    <p class="detail-label">Wind</p>
+                    <p id="wind">-- m/s</p>
+                </div>
+                <div class="detail-item">
+                    <p class="detail-label">Pressure</p>
+                    <p id="pressure">-- hPa</p>
+                </div>
+                </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
